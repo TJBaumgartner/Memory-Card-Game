@@ -1,11 +1,7 @@
 function CardGrid({someArray}) {
-  console.log(someArray)
     return (
-      <div className='cardGrid'>
-        <h1>Memory Card Game</h1>
-        <h2>Test your memory!</h2>
-      </div>
-    )
+      someArray.map(thing => <div key={thing}>{thing}</div>)
+      )
   }
   
   export default CardGrid;

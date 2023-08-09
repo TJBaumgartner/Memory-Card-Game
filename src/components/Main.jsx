@@ -1,5 +1,5 @@
 import CardGrid from "./cardComponents/CardGrid";
-//import React, { useState, useEffect } from 'react'
+import { useEffect, useState} from 'react'
 function Main() {
     const someArray = {
         Thing1: 'imageUrl1',
@@ -13,9 +13,21 @@ function Main() {
         Thing9: 'imageUrl9',
         Thing10: 'imageUrl10',
     }
+    const [thingArray, setThingArray] = useState(Object.keys(someArray));
+    function shuffleArray() {
+        const newArray = [...thingArray];
+        for (var i = newArray.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = newArray[i];
+            newArray[i] = newArray[j];
+            newArray[j] = temp;
+        }
+        setThingArray(newArray);
+    }
     return (
       <div className='Main'>
-        <CardGrid someArray={someArray}></CardGrid>
+        <CardGrid someArray={thingArray}></CardGrid>
+        <button onClick={shuffleArray}>Click Me</button>
       </div>
     )
   }
