@@ -13,7 +13,7 @@ function Main() {
         Thing9: 'imageUrl9',
         Thing10: 'imageUrl10',
     }
-    const [thingArray, setThingArray] = useState(Object.keys(someArray));
+    const [thingArray, setThingArray] = useState(Object.entries(someArray));
     function shuffleArray() {
         const newArray = [...thingArray];
         for (var i = newArray.length - 1; i > 0; i--) {
