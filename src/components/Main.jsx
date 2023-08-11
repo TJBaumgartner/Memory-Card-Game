@@ -1,17 +1,28 @@
 import CardGrid from "./cardComponents/CardGrid";
 import {useState} from 'react'
+import shepard from '../images/shepard.png'
+import chi from '../images/chi.png'
+import corgi from '../images/shepard.png'
+import dachshund from '../images/dachshund.png'
+import husky from '../images/husky.png'
+import mastif from '../images/mastif.png'
+import poodle from '../images/poodle.png'
+import shiba from '../images/shiba.png'
+import terrier from '../images/terrier.png'
+import bulldog from '../images/bulldog.png'
+
 function Main() {
     const someArray = {
-        Thing1: 'imageUrl1',
-        Thing2: 'imageUrl2',
-        Thing3: 'imageUrl3',
-        Thing4: 'imageUrl4',
-        Thing5: 'imageUrl5',
-        Thing6: 'imageUrl6',
-        Thing7: 'imageUrl7',
-        Thing8: 'imageUrl8',
-        Thing9: 'imageUrl9',
-        Thing10: 'imageUrl10',
+        Thing1: shepard,
+        Thing2: chi,
+        Thing3: corgi,
+        Thing4: dachshund,
+        Thing5: husky,
+        Thing6: mastif,
+        Thing7: poodle,
+        Thing8: shiba,
+        Thing9: terrier,
+        Thing10: bulldog,
     }
     const [thingArray, setThingArray] = useState(Object.entries(someArray));
     function shuffleArray() {
@@ -26,7 +37,9 @@ function Main() {
     }
     return (
       <div className='Main'>
-        <CardGrid someArray={thingArray} shuffleArray={shuffleArray}></CardGrid>
+        <div className="cardGrid">
+            <CardGrid someArray={thingArray} shuffleArray={shuffleArray}></CardGrid>
+        </div>
       </div>
     )
   }
