@@ -1,5 +1,5 @@
 import CardGrid from "./cardComponents/CardGrid";
-import { useEffect, useState} from 'react'
+import {useState} from 'react'
 function Main() {
     const someArray = {
         Thing1: 'imageUrl1',
@@ -26,8 +26,7 @@ function Main() {
     }
     return (
       <div className='Main'>
-        <CardGrid someArray={thingArray}></CardGrid>
-        <button onClick={shuffleArray}>Click Me</button>
+        <CardGrid someArray={thingArray} shuffleArray={shuffleArray}></CardGrid>
       </div>
     )
   }

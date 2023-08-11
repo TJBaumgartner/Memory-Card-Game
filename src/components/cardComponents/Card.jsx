@@ -1,10 +1,6 @@
-function Card({someArray}) {
-    console.log(someArray)
+function Card({shuffleArray, thing}) {
       return (
-        <div className='Card'>
-          <h1>Memory Card Game</h1>
-          <h2>Test your memory!</h2>
-        </div>
+        <div className='Card' onClick={shuffleArray}>{thing}</div>
       )
     }
     
