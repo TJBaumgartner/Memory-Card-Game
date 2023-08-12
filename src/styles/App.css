@@ -39,6 +39,11 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  transition: 0.35s ease-in-out;
+}
+.card:hover{
+  background-color: grey;
+  
 }
 .dogImage{
   height: 200px;

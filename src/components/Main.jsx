@@ -25,18 +25,33 @@ function Main() {
         'bulldog': bulldog,
     }
     const [dogArray, setDogArray] = useState(Object.entries(dogBreeds));
-    function shuffleArray() {
-        const newArray = [...dogArray];
-        for (var i = newArray.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = newArray[i];
-            newArray[i] = newArray[j];
-            newArray[j] = temp;
+    const [clickedDogs, setClickedDogs] = useState([])
+    const [count, setCount] = useState(0);
+    const [highScore, setHighScore] = useState(0)
+    function shuffleArray(dog) {
+      if(clickedDogs.includes(dog)){
+        setCount(0);
+        setClickedDogs([]);
+        if(count >= highScore){
+          setHighScore(count);
         }
-        setDogArray(newArray);
+      }else{
+        setCount(count + 1);
+        setClickedDogs([...clickedDogs, dog]);
+      }
+      const newArray = [...dogArray];
+      for (var i = newArray.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = newArray[i];
+          newArray[i] = newArray[j];
+          newArray[j] = temp;
+      }
+      setDogArray(newArray);
     }
+
     return (
       <div className='Main'>
+          <div>{count}{highScore}</div>
         <div className="cardGrid">
             <CardGrid dogBreeds={dogArray} shuffleArray={shuffleArray}></CardGrid>
         </div>
