@@ -1,8 +1,8 @@
 import Card from "./Card";
 
-function CardGrid({someArray, shuffleArray}) {
+function CardGrid({dogBreeds, shuffleArray}) {
     return (
-      someArray.map(thing => <Card key={thing} shuffleArray={shuffleArray} thing={thing}></Card>)
+      dogBreeds.map(dog => <Card key={dog} shuffleArray={shuffleArray} dog={dog}></Card>)
       )
   }
   

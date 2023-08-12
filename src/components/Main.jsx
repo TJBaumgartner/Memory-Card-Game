@@ -12,7 +12,7 @@ import terrier from '../images/terrier.png'
 import bulldog from '../images/bulldog.png'
 
 function Main() {
-    const someArray = {
+    const dogBreeds = {
         'shepard': shepard,
         'chi': chi,
         'corgi': corgi,
@@ -24,21 +24,21 @@ function Main() {
         'terrier': terrier,
         'bulldog': bulldog,
     }
-    const [thingArray, setThingArray] = useState(Object.entries(someArray));
+    const [dogArray, setDogArray] = useState(Object.entries(dogBreeds));
     function shuffleArray() {
-        const newArray = [...thingArray];
+        const newArray = [...dogArray];
         for (var i = newArray.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
             var temp = newArray[i];
             newArray[i] = newArray[j];
             newArray[j] = temp;
         }
-        setThingArray(newArray);
+        setDogArray(newArray);
     }
     return (
       <div className='Main'>
         <div className="cardGrid">
-            <CardGrid someArray={thingArray} shuffleArray={shuffleArray}></CardGrid>
+            <CardGrid dogBreeds={dogArray} shuffleArray={shuffleArray}></CardGrid>
         </div>
       </div>
     )
