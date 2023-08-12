@@ -2,7 +2,7 @@ import CardGrid from "./cardComponents/CardGrid";
 import {useState} from 'react'
 import shepard from '../images/shepard.png'
 import chi from '../images/chi.png'
-import corgi from '../images/shepard.png'
+import corgi from '../images/corgi.png'
 import dachshund from '../images/dachshund.png'
 import husky from '../images/husky.png'
 import mastif from '../images/mastif.png'
@@ -13,16 +13,16 @@ import bulldog from '../images/bulldog.png'
 
 function Main() {
     const someArray = {
-        Thing1: shepard,
-        Thing2: chi,
-        Thing3: corgi,
-        Thing4: dachshund,
-        Thing5: husky,
-        Thing6: mastif,
-        Thing7: poodle,
-        Thing8: shiba,
-        Thing9: terrier,
-        Thing10: bulldog,
+        'shepard': shepard,
+        'chi': chi,
+        'corgi': corgi,
+        'dachshund': dachshund,
+        'husky': husky,
+        'mastif': mastif,
+        'poodle': poodle,
+        'shiba': shiba,
+        'terrier': terrier,
+        'bulldog': bulldog,
     }
     const [thingArray, setThingArray] = useState(Object.entries(someArray));
     function shuffleArray() {

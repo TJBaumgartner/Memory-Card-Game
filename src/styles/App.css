@@ -1,11 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  grid-template-columns:100%;
+  min-height: 100vh;
+}
+.Header{
+}
+.Footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: darkgray;
+  color: white;
+  padding: 20px;
+}
+.Footer h2{
+
+}
+.Main{
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px 100px 0px;}
 .cardGrid{
+  max-width: 60%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+  row-gap: 100px;
 }
 .card {
   padding: 2rem;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .dogImage{
-  width: 100px;
-  height: auto;
+  height: 200px;
+  width: auto;
+  object-fit: scale-down;
+}
+.dogName{
+  font-size: 2rem;
+  
 }
