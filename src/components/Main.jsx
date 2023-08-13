@@ -51,7 +51,7 @@ function Main() {
 
     return (
       <div className='Main'>
-          <div>{count}{highScore}</div>
+        <div className="scoreContainer"><h1>Current Score: {count}</h1><h1>Highscore: {highScore}</h1></div>
         <div className="cardGrid">
             <CardGrid dogBreeds={dogArray} shuffleArray={shuffleArray}></CardGrid>
         </div>
